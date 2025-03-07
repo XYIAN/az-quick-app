@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es2016",                              
+    "module": "commonjs",
+    "rootDir": "./src",  // Set the root directory to "src"
+    "outDir": "./dist",  // Specify the output directory
+    "strict": true,      
+    "esModuleInterop": true, // Ensure compatibility with ES modules
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  }
+}
