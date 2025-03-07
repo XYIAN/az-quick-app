@@ -1,25 +1,28 @@
-# ?? Todo App (Full Stack)
+# Todo App (Full Stack)
+
+*NOTE:* completed for minimum requirements - will add UI features if schedule permits but since you guys need this asap here it is with the requirements met. 
 
 A full-stack **Todo Application** built with **React, Redux Toolkit, TypeScript, Node.js, and
 Express.js**.  
 This app allows users to **manage tasks**, categorize them, mark them as complete, and sort/filter
 todos based on different criteria.
 
----
-
-## ?? Features
-
-? **Add Todos** (with title, description, due date, and category)  
-? **Edit Todos** (modify title, description, and due date)  
-? **Mark as Completed** (toggle between active and completed)  
-? **Delete Todos**  
-? **Filter Todos** (by all, active, or completed)  
-? **Sort Todos** (by creation date or due date)  
-? **Categorize Todos** (group tasks under custom categories)
+https://github.com/user-attachments/assets/8b780db6-225f-4908-89f0-86864b295370
 
 ---
 
-## ?? Technologies Used
+## Features
+- **Add Todos** (with title, description, due date, and category)
+- **Edit Todos** (modify title, description, and due date)
+- **Mark as Completed** (toggle between active and completed)
+- **Delete Todos**
+- **Filter Todos** (by all, active, or completed)
+- **Sort Todos** (by creation date or due date)
+- **Categorize Todos** (group tasks under custom categories)
+
+---
+
+## Technologies Used
 
 ### **Frontend (React)**
 
@@ -40,7 +43,7 @@ todos based on different criteria.
 
 ---
 
-## ?? Getting Started
+## Getting Started
 
 ### Step 1: Clone Repo
 
@@ -69,7 +72,7 @@ npm run dev
 
 The frontend will run on http://localhost:5173
 
-## ?? API Endpoints
+## API Endpoints
 
 ### **Todos**
 
@@ -87,7 +90,7 @@ The frontend will run on http://localhost:5173
 | GET    | `/api/categories` | Get all categories    |
 | POST   | `/api/categories` | Create a new category |
 
-## ?? How to Use
+## How to Use
 
 1. **Create a Todo**
 
@@ -121,20 +124,20 @@ The frontend will run on http://localhost:5173
 
 ---
 
-## ?? Future Enhancements
+## Future Enhancements
 
-- ?? Add a **database (MongoDB or PostgreSQL)** instead of in-memory storage.
-- ?? Improve UI with animations and a modern design.
-- ?? Make it **fully responsive** for mobile users.
+- Add a **database (MongoDB or PostgreSQL)** instead of in-memory storage.
+- Improve UI with animations and a modern design.
+- Make it **fully responsive** for mobile users.
 
 ---
 
-## ?? License
+## License
 
 This project is **open-source** and available under the **MIT License**.
 
 ---
 
-### ????? Developed by [Kyle Dilbeck](https://github.com/xyian)
+### Developed by [Kyle Dilbeck](https://github.com/xyian)
 
-?? **Follow for more projects & updates!**
+**Follow for more projects & updates!**
