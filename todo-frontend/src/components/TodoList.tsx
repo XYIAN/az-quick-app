@@ -140,7 +140,7 @@ const TodoList = () => {
                       >
                         Edit
                       </button>
-                      <button onClick={() => handleDelete(todo.id)}>🗑 Delete</button>
+                      <button onClick={() => handleDelete(todo.id)}>Delete</button>
                     </>
                   )}
                 </li>
@@ -177,7 +177,7 @@ const TodoList = () => {
                     <strong>{todo.title}</strong> - {todo.completed ? "✅" : "❌"}
                     {todo.dueDate ? ` (Due: ${todo.dueDate})` : ""}
                     <button onClick={() => handleToggleComplete(todo.id)}>
-                      {todo.completed ? "Undo" : "Complete"}
+                      {todo.completed ? "Incomplete" : "Complete"}
                     </button>
                     <button
                       onClick={() =>
