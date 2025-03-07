@@ -1,0 +1,40 @@
+.liststyle {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+button {
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:first-of-type {
+  background: var(--primary-color);
+  color: black;
+}
+
+button:nth-of-type(2) {
+  background: var(--secondary-color);
+  color: white;
+}
+
+button:last-of-type {
+  background: #dc3545;
+  color: white;
+}

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addTodo } from "../store/todoSlice";
 import { fetchCategories, addCategory } from "../store/categorySlice";
 import { RootState, AppDispatch } from "../store/store";
+import styles from "../styles/TodoForm.module.scss";
 
 const TodoForm = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -43,7 +44,7 @@ const TodoForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.formstyle}>
       <h3>Add Todo</h3>
       <input
         type="text"

@@ -1,0 +1,29 @@
+.formstyle {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+input,
+select,
+button {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+button {
+  background: var(--primary-color);
+  color: black;
+}
+
+button:hover {
+  background: var(--secondary-color);
+  color: white;
+}

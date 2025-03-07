@@ -73,18 +73,3 @@ li {
   justify-content: space-between;
   border-left: 5px solid var(--primary-color);
 }
-@media (max-width: 768px) {
-  .container {
-    width: 95%;
-  }
-
-  li {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  button {
-    width: 100%;
-    margin-top: 5px;
-  }
-}

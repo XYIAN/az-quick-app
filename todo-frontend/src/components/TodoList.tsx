@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchTodos, updateTodo, deleteTodo } from "../store/todoSlice";
 import { fetchCategories } from "../store/categorySlice";
 import { RootState, AppDispatch } from "../store/store";
+import styles from "../styles/TodoList.module.scss";
 
 const TodoList = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -73,7 +74,7 @@ const TodoList = () => {
   });
 
   return (
-    <div>
+    <div className={styles.liststyle}>
       <h2>Todo List</h2>
       {loading && <p>Loading...</p>}
 
