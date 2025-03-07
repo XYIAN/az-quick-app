@@ -1,7 +1,9 @@
 # ?? Todo App (Full Stack)
 
-A full-stack **Todo Application** built with **React, Redux Toolkit, TypeScript, Node.js, and Express.js**.  
-This app allows users to **manage tasks**, categorize them, mark them as complete, and sort/filter todos based on different criteria.
+A full-stack **Todo Application** built with **React, Redux Toolkit, TypeScript, Node.js, and
+Express.js**.  
+This app allows users to **manage tasks**, categorize them, mark them as complete, and sort/filter
+todos based on different criteria.
 
 ---
 
@@ -21,20 +23,20 @@ This app allows users to **manage tasks**, categorize them, mark them as complet
 
 ### **Frontend (React)**
 
--  **Vite** (for fast React setup)
--  **React.js** (for building the UI)
--  **Redux Toolkit** (for state management)
--  **TypeScript** (for type safety)
--  **Axios** (for API calls)
--  **CSS or TailwindCSS** (for styling)
+- **Vite** (for fast React setup)
+- **React.js** (for building the UI)
+- **Redux Toolkit** (for state management)
+- **TypeScript** (for type safety)
+- **Axios** (for API calls)
+- **CSS or TailwindCSS** (for styling)
 
 ### **Backend (Node.js + Express)**
 
--  **Node.js** (server runtime)
--  **Express.js** (to handle API requests)
--  **Zod** (for validation)
--  **TypeScript** (for backend structure)
--  **Cors** (for frontend-backend communication)
+- **Node.js** (server runtime)
+- **Express.js** (to handle API requests)
+- **Zod** (for validation)
+- **TypeScript** (for backend structure)
+- **Cors** (for frontend-backend communication)
 
 ---
 
@@ -89,41 +91,41 @@ The frontend will run on http://localhost:5173
 
 1. **Create a Todo**
 
-   -  Enter a title, optional description, select a category, and set a due date.
-   -  Click **"Add Todo"** to save it.
+   - Enter a title, optional description, select a category, and set a due date.
+   - Click **"Add Todo"** to save it.
 
 2. **Mark as Completed**
 
-   -  Click the **"Complete"** button to mark a task as done.
-   -  Click **"Undo"** to mark it as active again.
+   - Click the **"Complete"** button to mark a task as done.
+   - Click **"Undo"** to mark it as active again.
 
 3. **Edit a Todo**
 
-   -  Click **"Edit"**, update the title/description/due date, and save.
+   - Click **"Edit"**, update the title/description/due date, and save.
 
 4. **Delete a Todo**
 
-   -  Click **"?? Delete"** to remove the task.
+   - Click **"?? Delete"** to remove the task.
 
 5. **Filter Todos**
 
-   -  Use the dropdown to view **All, Active, or Completed** todos.
+   - Use the dropdown to view **All, Active, or Completed** todos.
 
 6. **Sort Todos**
 
-   -  Sort by **Creation Date** or **Due Date**.
+   - Sort by **Creation Date** or **Due Date**.
 
 7. **Manage Categories**
-   -  Click **"+ Add Category"** to create a new category.
-   -  Categorized tasks are grouped under their respective category.
+   - Click **"+ Add Category"** to create a new category.
+   - Categorized tasks are grouped under their respective category.
 
 ---
 
 ## ?? Future Enhancements
 
--  ?? Add a **database (MongoDB or PostgreSQL)** instead of in-memory storage.
--  ?? Improve UI with animations and a modern design.
--  ?? Make it **fully responsive** for mobile users.
+- ?? Add a **database (MongoDB or PostgreSQL)** instead of in-memory storage.
+- ?? Improve UI with animations and a modern design.
+- ?? Make it **fully responsive** for mobile users.
 
 ---
 
