@@ -1,11 +1,12 @@
-import Footer from "./components/footer/Footer";
-import TodoPage from "./pages/todoPage/TodoPage";
+import TodoForm from "./components/TodoForm";
+import TodoList from "./components/TodoList";
+
 function App() {
-  //!! Typically we would have a Router here to handle different routes but for this simple app we don't need it
   return (
-    <div className="flex flex-column h-full">
-      <TodoPage />
-      <Footer />
+    <div>
+      <h1 className="p-2 text-center">Todo App</h1>
+      <TodoForm />
+      <TodoList />
     </div>
   );
 }

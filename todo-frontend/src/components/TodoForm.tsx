@@ -4,8 +4,6 @@ import { addTodo } from "../store/todoSlice";
 import { fetchCategories, addCategory } from "../store/categorySlice";
 import { RootState, AppDispatch } from "../store/store";
 import styles from "../styles/TodoForm.module.scss";
-import { Panel } from "primereact/panel";
-import { Button } from "primereact/button";
 
 const TodoForm = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -46,46 +44,35 @@ const TodoForm = () => {
   };
 
   return (
-    <Panel toggleable header="Add Todo">
-      <Panel header="New Todo">
-        <form onSubmit={handleSubmit} className={styles.formstyle}>
-          <h3>New Todo Form</h3>
-          <input
-            type="text"
-            placeholder="Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-          />
-          <input
-            type="text"
-            placeholder="Description (optional)"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} />
-          <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
-            <option value="">No Category</option>
-            {categories.map((category) => (
-              <option key={category.id} value={category.name}>
-                {category.name}
-              </option>
-            ))}
-          </select>
-          <button type="submit">Add Todo</button>
-        </form>
-      </Panel>
-      <Panel header="New Category" className="mt-4">
-        <div className="flex justify-content-center align-items-center gap-2">
-          <Button
-            type="button"
-            onClick={handleAddCategory}
-            label="Add New Category"
-            icon="pi pi-plus"
-          />
-        </div>
-      </Panel>
-    </Panel>
+    <form onSubmit={handleSubmit} className={styles.formstyle}>
+      <h3>Add Todo</h3>
+      <input
+        type="text"
+        placeholder="Title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        required
+      />
+      <input
+        type="text"
+        placeholder="Description (optional)"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
+      <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} />
+      <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+        <option value="">No Category</option>
+        {categories.map((category) => (
+          <option key={category.id} value={category.name}>
+            {category.name}
+          </option>
+        ))}
+      </select>
+      <button type="button" onClick={handleAddCategory}>
+        + Add Category
+      </button>
+      <button type="submit">Add Todo</button>
+    </form>
   );
 };
 
