@@ -267,7 +267,7 @@ const TodoList = () => {
   );
 
   return (
-    <Panel header="Todo List" toggleable>
+    <Panel header="Todo List" toggleable className="pt-4">
       <div className={styles.liststyle}>
         {loading && <h3 className="text-center p-4rem">Loading...</h3>}
         <p className="text-center">
