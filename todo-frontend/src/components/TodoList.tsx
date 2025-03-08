@@ -154,31 +154,16 @@ const TodoList = () => {
                       <button onClick={() => setEditingTodo(null)}>Cancel</button>
                     </>
                   ) : (
-                    <>
-                      <strong>{todo.title}</strong> - {todo.completed ? "Complete" : "Incomplete"}
-                      {todo.dueDate ? ` (Due: ${todo.dueDate})` : ""}
-                      <Button
-                        onClick={() => handleToggleComplete(todo.id)}
-                        label={todo.completed ? "Undo" : "Complete"}
-                      />
-                      <Button
-                        label="edit"
-                        icon="pi pi-pencil"
-                        onClick={() =>
-                          handleEdit(
-                            todo.id,
-                            todo.title,
-                            todo.description || "",
-                            todo.dueDate || "",
-                          )
-                        }
-                      />
-                      <Button
-                        onClick={() => handleDelete(todo.id)}
-                        label="Delete"
-                        icon="pi pi-trash"
-                      />
-                    </>
+                    <TodoDetails
+                      title={todo.title}
+                      completed={todo.completed}
+                      dueDate={todo.dueDate}
+                      description={todo.description}
+                      id={todo.id}
+                      handleToggleComplete={handleToggleComplete}
+                      handleDelete={handleDelete}
+                      handleEdit={handleEdit}
+                    />
                   )}
                 </li>
               ))}
@@ -227,32 +212,16 @@ const TodoList = () => {
                           <button onClick={() => setEditingTodo(null)}>Cancel</button>
                         </>
                       ) : (
-                        <>
-                          <TodoDetails
-                            title={todo.title}
-                            completed={todo.completed}
-                            dueDate={todo.dueDate}
-                            description={todo.description}
-                          />
-                          <Button
-                            onClick={() => handleToggleComplete(todo.id)}
-                            label={todo.completed ? "Undo" : "Complete"}
-                            icon={todo.completed ? "pi pi-undo" : "pi pi-check"}
-                          />
-                          <Button
-                            onClick={() =>
-                              handleEdit(
-                                todo.id,
-                                todo.title,
-                                todo.description ? todo.description : "",
-                                todo.dueDate || "",
-                              )
-                            }
-                          >
-                            Edit
-                          </Button>
-                          <Button onClick={() => handleDelete(todo.id)}>Delete</Button>
-                        </>
+                        <TodoDetails
+                          title={todo.title}
+                          completed={todo.completed}
+                          dueDate={todo.dueDate}
+                          description={todo.description}
+                          id={todo.id}
+                          handleToggleComplete={handleToggleComplete}
+                          handleDelete={handleDelete}
+                          handleEdit={handleEdit}
+                        />
                       )}
                     </li>
                   ))}
