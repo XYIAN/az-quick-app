@@ -6,7 +6,6 @@ import { RootState, AppDispatch } from "../store/store";
 import styles from "../styles/TodoList.module.scss";
 import { Fieldset } from "primereact/fieldset";
 import { Panel } from "primereact/panel";
-import { Button } from "primereact/button";
 import { TodoDetails } from "./TodoDetails";
 import { Toast } from "primereact/toast";
 
