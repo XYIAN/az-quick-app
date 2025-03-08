@@ -9,6 +9,19 @@ todos based on different criteria.
 
 https://github.com/user-attachments/assets/8b780db6-225f-4908-89f0-86864b295370
 
+
+## NEW BRANCH COMING SOON: 
+- Major UI update
+- API update
+- prime reat lib added
+- component purity improved 
+
+https://github.com/user-attachments/assets/cda75090-8b93-466e-a330-a4111524cda0
+
+
+
+
+
 ---
 
 ## Features
