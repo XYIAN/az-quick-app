@@ -1,0 +1,41 @@
+.footer {
+  padding: 20px;
+  background: var(--card-bg);
+  text-align: center;
+}
+
+/* Button Wrapper for Animation */
+.animatedButton {
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+    linear-gradient(120deg, #ffcc00, #ff6600, #ffcc00) border-box;
+  animation: glowing-border 3s linear infinite;
+}
+
+/* Hover Effect */
+.animatedButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
+}
+
+/* Rotating Border Effect */
+@keyframes glowing-border {
+  0% {
+    border-image-source: linear-gradient(0deg, #ffcc00, #ff6600, #ffcc00);
+  }
+  25% {
+    border-image-source: linear-gradient(90deg, #ffcc00, #ff6600, #ffcc00);
+  }
+  50% {
+    border-image-source: linear-gradient(180deg, #ffcc00, #ff6600, #ffcc00);
+  }
+  75% {
+    border-image-source: linear-gradient(270deg, #ffcc00, #ff6600, #ffcc00);
+  }
+  100% {
+    border-image-source: linear-gradient(360deg, #ffcc00, #ff6600, #ffcc00);
+  }
+}
