@@ -141,7 +141,7 @@ The frontend will run on http://localhost:5173
 
 - Add a **database (MongoDB or PostgreSQL)** instead of in-memory storage.
 - Improve UI with animations and a modern design.
-- Make it **fully responsive** for mobile users.
+- Make it **fully responsive** for large screen users.
 
 ---
 
