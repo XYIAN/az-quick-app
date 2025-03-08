@@ -6,6 +6,8 @@ const TodoPage = () => {
     <div>
       <h1 className="p-2 text-center">Todo App</h1>
       <TodoForm />
+      {/* <MyTodoList /> */}
+
       <TodoList />
     </div>
   );
