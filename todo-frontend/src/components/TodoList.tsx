@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTodos, updateTodo, deleteTodo } from "../store/todoSlice";
 import { fetchCategories } from "../store/categorySlice";
@@ -7,14 +7,14 @@ import styles from "../styles/TodoList.module.scss";
 import { Fieldset } from "primereact/fieldset";
 import { Panel } from "primereact/panel";
 import { Button } from "primereact/button";
+import { TodoDetails } from "./TodoDetails";
+import { Toast } from "primereact/toast";
 
 const FIELDSET_CLASS = `mt-4`;
-type TodoDetailsProps = {
-  dueDate?: string;
-  completed: boolean;
-  title: string;
-};
+
 const TodoList = () => {
+  //!! most of the logic in this component should be in the store, will do later if time permits
+  //!! buisness logic should be in the store, components should be dumb
   const dispatch = useDispatch<AppDispatch>();
   const { todos, loading } = useSelector((state: RootState) => state.todos);
   const { categories } = useSelector((state: RootState) => state.categories);
@@ -24,13 +24,30 @@ const TodoList = () => {
   const [editTitle, setEditTitle] = useState("");
   const [editDescription, setEditDescription] = useState("");
   const [editDueDate, setEditDueDate] = useState("");
+  const toast = useRef<Toast>(null);
+
   useEffect(() => {
     dispatch(fetchTodos());
     dispatch(fetchCategories());
   }, [dispatch]);
+
+  const toastMessage = (
+    summary: string,
+    detail: string,
+    severity?: "success" | "info" | "warn" | "error" | "secondary" | "contrast" | undefined,
+  ) => {
+    toast.current?.show({ severity, summary, detail });
+  };
   const handleToggleComplete = (id: string) => {
     const todo = todos.find((t) => t.id === id);
     if (!todo) return;
+    toastMessage(
+      "Todo Status Updated",
+      `${todo.title} Todo has been successfully ${
+        todo.completed ? "marked as incomplete" : "marked as completed"
+      }`,
+      "success",
+    );
     dispatch(updateTodo({ ...todo, completed: !todo.completed }));
   };
   const handleEdit = (todoId: string, title: string, description: string, dueDate: string) => {
@@ -38,12 +55,13 @@ const TodoList = () => {
     setEditTitle(title);
     setEditDescription(description);
     setEditDueDate(dueDate || "");
+    toastMessage("Edit Mode", "You are now in edit mode", "info");
   };
   const handleSaveEdit = (id: string) => {
     if (!editTitle.trim()) return;
     const todo = todos.find((t) => t.id === id);
     if (!todo) return;
-
+    toastMessage("Edit Success", "Todo updated successfully", "success");
     dispatch(
       updateTodo({
         ...todo,
@@ -56,6 +74,7 @@ const TodoList = () => {
   };
   const handleDelete = (id: string) => {
     dispatch(deleteTodo(id));
+    toastMessage("Delete Success", "Todo deleted successfully", "success");
   };
   // Filter todos by status
   const filteredTodos = todos.filter((todo) => {
@@ -170,30 +189,6 @@ const TodoList = () => {
       </Fieldset>
     );
   };
-  const TodoDetails = ({ title, completed, dueDate }: TodoDetailsProps) => {
-    const IsCompleteToggle = () =>
-      completed ? (
-        <div className="flex flex-wrap align-items-center gap-1">
-          <i className="pi pi-check" />
-          <p>
-            <b>COMPLETED</b>
-          </p>
-        </div>
-      ) : (
-        <div className="flex flex-wrap align-items-center gap-1">
-          <i className="pi pi-times" />
-          <p>
-            <b>INCOMPLETE</b>
-          </p>
-        </div>
-      );
-    return (
-      <>
-        <strong>{title}</strong> <IsCompleteToggle />
-        {dueDate ? ` (Due: ${dueDate})` : ""}
-      </>
-    );
-  };
   const DisplayCategories = () => (
     //!! functional components like this should be in their own files, will do later if time permits
     <>
@@ -237,13 +232,14 @@ const TodoList = () => {
                             title={todo.title}
                             completed={todo.completed}
                             dueDate={todo.dueDate}
+                            description={todo.description}
                           />
-                          {/* <strong>{todo.title}</strong> - {todo.completed ? "✅" : "❌"}
-                          {todo.dueDate ? ` (Due: ${todo.dueDate})` : ""} */}
-                          <button onClick={() => handleToggleComplete(todo.id)}>
-                            {todo.completed ? "Undo" : "Complete"}
-                          </button>
-                          <button
+                          <Button
+                            onClick={() => handleToggleComplete(todo.id)}
+                            label={todo.completed ? "Undo" : "Complete"}
+                            icon={todo.completed ? "pi pi-undo" : "pi pi-check"}
+                          />
+                          <Button
                             onClick={() =>
                               handleEdit(
                                 todo.id,
@@ -254,8 +250,8 @@ const TodoList = () => {
                             }
                           >
                             Edit
-                          </button>
-                          <button onClick={() => handleDelete(todo.id)}>Delete</button>
+                          </Button>
+                          <Button onClick={() => handleDelete(todo.id)}>Delete</Button>
                         </>
                       )}
                     </li>
@@ -269,6 +265,7 @@ const TodoList = () => {
       )}
     </>
   );
+
   return (
     <Panel header="Todo List" toggleable>
       <div className={styles.liststyle}>
@@ -281,6 +278,7 @@ const TodoList = () => {
         <DisplayCategories />
         <DisplayUncategorizedTodos />
       </div>
+      <Toast ref={toast} />
     </Panel>
   );
 };
